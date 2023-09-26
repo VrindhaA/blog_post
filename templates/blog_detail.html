@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block title %}
+      <title>Local Library</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          {% block sidebar %}
+<!--            <ul class="sidebar-nav">-->
+<!--              <li><a >Home</a></li>-->
+<!--              <li><a href="">All books</a></li>-->
+<!--              <li><a href="">All authors</a></li>-->
+<!--            </ul>-->
+          {% endblock %}
+        </div>
+        <div class="col-sm-10 ">
+            <h3 class="ps-blog-side-head">POPULAR POSTS</h3>
+					{% for post in blogs %}
+
+		  <h2>Dynamic content</h2>
+		  <ul>
+			<li><strong>Title:</strong> {{ post.title }}</li>
+			<li><strong>Date:</strong> {{ post.publication_date }}</li>
+              <li><strong>Content:</strong> {{ post.body }}</li>
+			<li><strong>Author:</strong> {{ post.author }}</li>
+			<li><strong>Status:</strong> {{ post.status }}</li>
+            <li><strong>Category:</strong> {{ post.category }}</li>
+            <li><strong>Image:</strong> {{ post.image }}</li>
+
+
+		  </ul>
+
+			{% endfor %}</div>
+      </div>
+    </div>
+  </body>
+</html>
